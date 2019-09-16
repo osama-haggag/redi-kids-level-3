@@ -1,4 +1,4 @@
-To run the server, go to the `flaskberrypi` folder
+To run the server, go to the `flask_server` folder
     
     cd flask_server
     
