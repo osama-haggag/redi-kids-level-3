@@ -19,13 +19,15 @@ def guess():
     user_guess = int(user_guess_input)
 
     if user_guess == session['secret_number']:
-        return render_template('index.html', answer='Correct')
+        answer = "Correct!"
     elif user_guess > session['secret_number']:
         session['num_attempts'] -= 1
-        return render_template('index.html', answer='Too High. {} attempts left!'.format(session['num_attempts']))
+        answer = "Too high"
     else:
         session['num_attempts'] -= 1
-        return render_template('index.html', answer='Too Low. {} attempts left!'.format(session['num_attempts']))
+        answer = "Too low"
+
+    return render_template('index.html', answer=answer, max_attempts=MAX_ATTEMPTS, attempts_left=session['num_attempts'])
 
 
 @app.route('/')
@@ -33,7 +35,7 @@ def main():
     session['secret_number'] = random.randint(1, 100)
     print(session['secret_number'])
     session['num_attempts'] = MAX_ATTEMPTS
-    return render_template('index.html')
+    return render_template('index.html', max_attempts=MAX_ATTEMPTS, attempts_left=session['num_attempts'])
 
 
 if __name__ == '__main__':
