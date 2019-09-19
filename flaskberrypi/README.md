@@ -1,6 +1,6 @@
-To run the server, go to the `flaskberrypi` folder
+To run the server, go to the `flask_server` folder
     
-    cd flaskberrypi
+    cd flask_server
     
 Then start the flask application
 
