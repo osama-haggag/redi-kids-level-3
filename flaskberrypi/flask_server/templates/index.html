@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+   <title>Great Number Game</title>
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<form action="/move" method="post">
-    <button name="forwardBtn" type="submit">Forward</button>
-    <button name="backBtn" type="submit">Back</button>
-</form>
+  <h1>Welcome to the Great Number Game!</h1>
+  <h3>Think of a number 1 - 100...see if you can guess it right!</h3>
+  <p class="answer">{{ answer }}</p>
+  <form action='/guess' method='post'>
+      Guess: <input type='text' name='guess'>
+      <input type='submit' value='submit'>
+  </form>
 </body>
-</html>
