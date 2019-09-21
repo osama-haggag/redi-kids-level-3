@@ -2,10 +2,12 @@ import random
 
 from flask import Flask, request, render_template, session
 
+from pins import displayLife
+
 app = Flask(__name__)
 app.secret_key = 'thisIsSecret'
 
-MAX_ATTEMPTS = 7
+MAX_ATTEMPTS = 9
 
 
 @app.route('/guess', methods=['POST'])
@@ -26,7 +28,7 @@ def guess():
     else:
         session['num_attempts'] -= 1
         answer = "Too low"
-
+    displayLife(session['num_attempts'])
     return render_template('index.html', answer=answer, max_attempts=MAX_ATTEMPTS, attempts_left=session['num_attempts'])
 
 
@@ -35,6 +37,7 @@ def main():
     session['secret_number'] = random.randint(1, 100)
     print(session['secret_number'])
     session['num_attempts'] = MAX_ATTEMPTS
+    displayLife(MAX_ATTEMPTS)
     return render_template('index.html', max_attempts=MAX_ATTEMPTS, attempts_left=session['num_attempts'])
 
 
