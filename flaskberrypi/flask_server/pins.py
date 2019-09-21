@@ -13,17 +13,9 @@ leds = {
   8: LED(21),
 }
 
-def displayLife(leds, lifeLeft):
+def displayLife(lifeLeft):
   for led_index in range(len(leds)):
     leds[led_index].off()
   for led_index in range(lifeLeft):
     leds[led_index].on()
-
-displayLife(leds, 9)
-time.sleep(5)
-
-displayLife(leds, 5)
-time.sleep(5)
-
-displayLife(leds, 3)
-time.sleep(5)
+    
