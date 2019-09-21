@@ -2,7 +2,7 @@ import random
 
 from flask import Flask, request, render_template, session
 
-from pins import displayLife
+from pins import displayLife, win
 
 app = Flask(__name__)
 app.secret_key = 'thisIsSecret'
@@ -22,6 +22,7 @@ def guess():
 
     if user_guess == session['secret_number']:
         answer = "Correct!"
+        win()
     elif user_guess > session['secret_number']:
         session['num_attempts'] -= 1
         answer = "Too high"
