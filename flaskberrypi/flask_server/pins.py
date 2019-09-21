@@ -20,8 +20,8 @@ def displayLife(lifeLeft):
     leds[led_index].on()
     
 def win():
-  for i in range(5):
+  for i in range(8):
     for led_index in range(len(leds)):
       leds[led_index].on()
-      time.sleep(0.2)
+      time.sleep(0.05)
       leds[led_index].off()
