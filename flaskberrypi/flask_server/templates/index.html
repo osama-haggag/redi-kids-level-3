@@ -1,22 +1,45 @@
 <html>
-<head>
+  <head>
     <title>Great Number Game</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-<div align="center">
-    <h1>Welcome to the Great Number Game!</h1>
-    <h3>Think of a number 1 - 100...see if you can guess it right!</h3>
-    <p class="answer">{{ answer }}</p>
-    <form action='/guess' method='post'>
-        Guess: <input type='text' name='guess'>
-        <input type='submit' value='submit'>
-    </form>
-    {% for attempt in range(attempts_left) %}
-    <img src="{{ url_for('static', filename='lightbulb.svg') }}" width="30" >
-    {% endfor %}
-    {% for lost_attempt in range(max_attempts - attempts_left) %}
-    <img src="{{ url_for('static', filename='lightbulb_empty.svg') }}" width="30" >
-    {% endfor %}
-</div>
-</body>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="inner">
+        <h1>Welcome to the Great Number Game!</h1>
+        <h3>Think of a number 1 - 100...see if you can guess it right!</h3>
+        <div class="lifes">
+          {% for attempt in range(attempts_left) %}
+          <img
+            src="{{ url_for('static', filename='lightbulb.svg') }}"
+            width="30"
+          />
+          {% endfor %} {% for lost_attempt in range(max_attempts -
+          attempts_left) %}
+          <img
+            src="{{ url_for('static', filename='lightbulb_empty.svg') }}"
+            width="30"
+          />
+          {% endfor %}
+        </div>
+        <form class="answer__form" action="/guess" method="post">
+          <label>Guess: <br /><input type="number" name="guess"/></label>
+          <input type="submit" value="submit" />
+        </form>
+        <p class="answer">{{ answer }}</p>
+      </div>
+    </div>
+  </body>
+</html>
