@@ -18,4 +18,4 @@ def displayLife(leds, lifeLeft):
     leds[led_index].on()
 
 
-displayLife(9)
+displayLife(leds,9)
