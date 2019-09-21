@@ -41,7 +41,7 @@ h1 {
   font-family: "Special Elite", cursive;
 }
 
-.answer__form input[type="submit"] {
+.btn {
   background-color: #000;
   color: #fff;
   font-family: "Special Elite", cursive;
@@ -51,9 +51,10 @@ h1 {
   cursor: pointer;
   transition: all 350ms ease-in-out;
   margin-left: 16px;
+  text-decoration: none;
 }
 
-.answer__form input[type="submit"]:hover {
+.btn:hover {
   background-color: #222;
 }
 

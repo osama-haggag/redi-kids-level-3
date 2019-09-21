@@ -36,9 +36,13 @@
         </div>
         <form class="answer__form" action="/guess" method="post">
           <label>Guess: <br /><input type="number" name="guess"/></label>
-          <input type="submit" value="submit" />
+          <input class="btn" type="submit" value="submit" />
         </form>
         <p class="answer">{{ answer }}</p>
+
+        <a class="btn" href="{{ url_for('.main') }}">
+          New game?
+        </a>
       </div>
     </div>
   </body>

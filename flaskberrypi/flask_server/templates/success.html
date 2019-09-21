@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>You did it!</title>
+</head>
+<body>
+<div align="center">
+    <img src="{{ url_for('static', filename='success.jpg') }}"><br>
+    <button onclick="window.location.href = '{{ url_for('.main') }}';">Play Again!</button>
+</div>
+</body>
+</html>
