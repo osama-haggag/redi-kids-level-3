@@ -20,29 +20,35 @@
       <div class="inner">
         <h1>Welcome to the Great Number Game!</h1>
         <h3>Think of a number 1 - 100...see if you can guess it right!</h3>
-        <div class="lifes">
-          {% for attempt in range(attempts_left) %}
-          <img
-            src="{{ url_for('static', filename='lightbulb.svg') }}"
-            width="30"
-          />
-          {% endfor %} {% for lost_attempt in range(max_attempts -
-          attempts_left) %}
-          <img
-            src="{{ url_for('static', filename='lightbulb_empty.svg') }}"
-            width="30"
-          />
-          {% endfor %}
-        </div>
-        <form class="answer__form" action="/guess" method="post">
-          <label>Guess: <br /><input type="number" name="guess"/></label>
-          <input class="btn" type="submit" value="submit" />
-        </form>
-        <p class="answer">{{ answer }}</p>
+        <div class="game">
+          <div class="lifes">
+            {% for attempt in range(attempts_left) %}
+            <img
+              class="life life-on"
+              src="{{ url_for('static', filename='lightbulb_empty.svg') }}"
+              width="30"
+            />
+            {% endfor %} {% for lost_attempt in range(max_attempts -
+            attempts_left) %}
+            <img
+              class="life life-off"
+              src="{{ url_for('static', filename='lightbulb_empty.svg') }}"
+              width="30"
+            />
+            {% endfor %}
+          </div>
+          <form class="answer__form" action="/guess" method="post">
+            <input type="number" name="guess" placeholder="Number" />
+            <input class="btn btn-big" type="submit" value="submit" />
+          </form>
+          <p class="answer">{{ answer }}</p>
 
-        <a class="btn" href="{{ url_for('.main') }}">
-          New game?
-        </a>
+          <div class="new-game-container">
+            <a class="btn" href="{{ url_for('.main') }}">
+              New game?
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </body>

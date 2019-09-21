@@ -20,6 +20,11 @@ body {
   text-align: left;
 }
 
+.game {
+  margin: 32px 0;
+  text-align: center;
+}
+
 .lifes {
   margin: 16px;
 }
@@ -33,9 +38,9 @@ h1 {
 }
 .answer__form input[type="number"] {
   padding: 16px;
-  font-size: 64px;
+  font-size: 55px;
   text-align: center;
-  width: 200px;
+  width: 250px;
   border: none;
   border-bottom: 2px dashed #000;
   font-family: "Special Elite", cursive;
@@ -46,12 +51,16 @@ h1 {
   color: #fff;
   font-family: "Special Elite", cursive;
   border: 2px dashed #000;
-  padding: 24px 16px;
-  font-size: 32px;
   cursor: pointer;
   transition: all 350ms ease-in-out;
   margin-left: 16px;
   text-decoration: none;
+  font-size: 24px;
+  padding: 16px 12px;
+}
+.btn.btn-big {
+  padding: 24px 16px;
+  font-size: 32px;
 }
 
 .btn:hover {
@@ -67,4 +76,14 @@ h1 {
 .answer {
   font-size: 32px;
   padding-top: 32px;
+}
+
+.new-game-container {
+  margin: 32px 0;
+  text-align: center;
+  margin-top: 128px;
+}
+
+.life.life-off {
+  opacity: 0.4;
 }
