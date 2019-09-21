@@ -12,8 +12,6 @@ MAX_ATTEMPTS = 9
 
 @app.route('/guess', methods=['POST'])
 def guess():
-    if session['num_attempts'] == 0:
-        return "You failed!"
     user_guess_input = request.form.get('guess')
     if not user_guess_input.isnumeric():
         return "Wrong Input: give me a number"
@@ -21,14 +19,19 @@ def guess():
     user_guess = int(user_guess_input)
 
     if user_guess == session['secret_number']:
-        answer = "Correct!"
         win()
-    elif user_guess > session['secret_number']:
+        return render_template('success.html')
+
+    if user_guess > session['secret_number']:
         session['num_attempts'] -= 1
         answer = "Too high"
     else:
         session['num_attempts'] -= 1
         answer = "Too low"
+
+    if session['num_attempts'] == 0:
+        return render_template('failure.html')
+
     displayLife(session['num_attempts'])
     return render_template('index.html', answer=answer, max_attempts=MAX_ATTEMPTS, attempts_left=session['num_attempts'])
 

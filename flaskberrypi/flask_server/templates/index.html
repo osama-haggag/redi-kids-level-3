@@ -18,5 +18,6 @@
     {% for lost_attempt in range(max_attempts - attempts_left) %}
     <img src="{{ url_for('static', filename='lightbulb_empty.svg') }}" width="30" >
     {% endfor %}
+    <br><br><button onclick="window.location.href = '{{ url_for('.main') }}';">New game?</button>
 </div>
 </body>
