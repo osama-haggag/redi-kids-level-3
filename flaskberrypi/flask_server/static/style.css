@@ -57,6 +57,7 @@ h1 {
   text-decoration: none;
   font-size: 24px;
   padding: 16px 12px;
+  display: inline-block;
 }
 .btn.btn-big {
   padding: 24px 16px;

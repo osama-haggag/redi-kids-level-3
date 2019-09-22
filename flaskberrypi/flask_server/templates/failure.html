@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>You lost!</title>
-</head>
-<body>
-<div align="center">
-    <img src="{{ url_for('static', filename='failure.jpg') }}"><br>
-    <button onclick="window.location.href = '{{ url_for('.main') }}';">Play Again!</button>
-</div>
-</body>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="inner">
+        <img src="{{ url_for('static', filename='failure.jpg') }}" /><br />
+        <div class="new-game-container">
+          <a class="btn" href="{{ url_for('.main') }}">
+            Play Again!
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

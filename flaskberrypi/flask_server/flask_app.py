@@ -29,7 +29,7 @@ def guess():
         session['num_attempts'] -= 1
         answer = "Too low"
 
-    if session['num_attempts'] == 0:
+    if session['num_attempts'] <= 0:
         return render_template('failure.html')
 
     displayLife(session['num_attempts'])
