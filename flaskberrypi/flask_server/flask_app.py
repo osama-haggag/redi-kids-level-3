@@ -14,7 +14,9 @@ MAX_ATTEMPTS = 9
 def guess():
     user_guess_input = request.form.get('guess')
     if not user_guess_input.isnumeric():
-        return "Wrong Input: give me a number"
+        # return "Wrong Input: give me a number"
+        answer = "Wrong input: not a number"
+        return render_template('index.html', answer=answer, max_attempts=MAX_ATTEMPTS, attempts_left=session['num_attempts'])
 
     user_guess = int(user_guess_input)
 
