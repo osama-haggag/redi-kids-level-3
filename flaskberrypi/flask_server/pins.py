@@ -4,7 +4,7 @@ from gpiozero.pins.mock import MockFactory
 import time
 
 # allow to run on non-pinned device (for dev)
-gpiozero.Device.pin_factory = MockFactory()
+# gpiozero.Device.pin_factory = MockFactory()
 
 leds = {
   0: LED(5),
